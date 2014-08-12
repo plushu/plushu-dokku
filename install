@@ -4,7 +4,8 @@ set -eo pipefail; [[ $PLUSHU_TRACE ]] && set -x
 if [[ $EUID == 0 ]]; then
   # TODO: Check expected pitfalls first
   for plugin in git-hooking docker nginx \
-    git-receive-app buildstep config release-env start-web-deploy \
+    git-receive-app git-receive-warn-no-master \
+    buildstep config release-env start-web-deploy \
     app-name-domain domains nginx-app-vhosts
   do
     plushu plugins:install "$plugin"

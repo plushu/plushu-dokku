@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail; [[ -n "$PLUSHU_TRACE" ]] && set -x
 
-if [[ $EUID == 0 ]]; then
+if [[ "$EUID" == 0 ]]; then
   # TODO: Check expected pitfalls first
   for plugin in git docker nginx app-long-opt \
     git-apps git-receive-init git-receive-warn-no-master \

@@ -8,7 +8,7 @@ if [[ "$EUID" == 0 ]]; then
     buildstep config release-env start-web-deploy startup-deploy-all \
     app-name-domain domains nginx-app-vhosts
   do
-    if [[ -d "$PLUSHU_ROOT/plugins/$plugin" ]]; then
+    if [[ -d "$PLUSHU_PLUGINS_ROOT/plugins/$plugin" ]]; then
       plushu plugins:reinstall "$plugin"
     else
       plushu plugins:install "$plugin"

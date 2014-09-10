@@ -3,8 +3,8 @@ set -eo pipefail; [[ -n "$PLUSHU_TRACE" ]] && set -x
 
 if [[ "$EUID" == 0 ]]; then
   # TODO: Check expected pitfalls first
-  for plugin in repos git docker nginx nginx-tuning apps app-long-opt \
-    git-apps git-receive-init git-receive-warn-no-master \
+  for plugin in repos git docker nginx nginx-tuning apps app-repo-binding \
+    app-long-opt git-apps git-receive-init git-receive-warn-no-master \
     buildstep config release-env start-web-deploy startup-deploy-all \
     app-name-domain domains nginx-app-vhosts
   do

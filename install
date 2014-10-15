@@ -9,9 +9,11 @@ if [[ "$EUID" == 0 ]]; then
     app-name-domain domains nginx-app-vhosts
   do
     if [[ -d "$PLUSHU_PLUGINS_DIR/$plugin" ]]; then
-      plushu plugins:reinstall "$plugin"
+      "$PLUSHU_ROOT/lib/plushook" reinstall-plugin "$plugin" \
+        "https://github.com/plushu/plushu-$plugin.git"
     else
-      plushu plugins:install "$plugin"
+      "$PLUSHU_ROOT/lib/plushook" install-plugin "$plugin" \
+        "https://github.com/plushu/plushu-$plugin.git"
     fi
   done
 else

@@ -15,6 +15,11 @@ if [[ "$EUID" == 0 ]]; then
     else
       "$PLUSHU_ROOT/lib/plushook" install-plugin "$plugin" \
         "https://github.com/plushu/plushu-$plugin.git"
+      if [[ -d "$PLUSHU_PLUGINS_DIR/$plugin/profile.d" ]]; then
+        for profile in "$PLUSHU_PLUGINS_DIR/$plugin/profile.d"/* ; do
+          source "$profile"
+        done
+      fi
     fi
   done
 else

@@ -6,7 +6,7 @@ if [[ "$EUID" == 0 ]]; then
   for plugin in repos git docker nginx nginx-tuning apps app-repo-binding \
     app-long-opt git-apps git-receive-init git-receive-warn-no-master \
     config release-app-profile deploy-app-local-container startup-deploy-all \
-    app-name-domain domains nginx-app-vhosts cleanup-old-app-images \
+    app-name-domain nginx-app-vhosts cleanup-old-app-images \
     buildpacks build-cedarish buildstep-buildpacks buildstep-custom-buildpacks
   do
     if [[ -d "$PLUSHU_PLUGINS_DIR/$plugin" ]]; then
